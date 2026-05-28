@@ -1,0 +1,13 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-labelledby="faviconTitle">
+  <title id="faviconTitle">InstaClone Favicon</title>
+  <defs>
+    <linearGradient id="favGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f58529"/>
+      <stop offset="50%" stop-color="#dd2a7b"/>
+      <stop offset="100%" stop-color="#515bd4"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="40" height="40" rx="10" fill="url(#favGradient)" />
+  <circle cx="24" cy="24" r="9" fill="white" opacity="0.95" />
+  <circle cx="24" cy="24" r="4" fill="url(#favGradient)" />
+</svg>

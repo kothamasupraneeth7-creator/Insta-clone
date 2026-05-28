@@ -1,0 +1,89 @@
+/* CommentSection Styles */
+.comment-section {
+  padding: 8px 16px;
+  border-top: 1px solid #efefef;
+  text-align: left;
+}
+
+.comments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 12px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.comment-item {
+  font-size: 13px;
+  text-align: left;
+  padding-left: 0;
+}
+
+.comment-author {
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 4px 0;
+  display: block;
+}
+
+.comment-text {
+  color: #333;
+  margin: 0;
+  display: block;
+  line-height: 1.5;
+}
+
+.no-comments {
+  font-size: 13px;
+  color: #999;
+  margin: 0 0 12px 0;
+}
+
+.comment-form {
+  display: flex;
+  gap: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #efefef;
+  justify-content: flex-start;
+}
+
+.comment-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.comment-input:focus {
+  border-color: #0095f6;
+}
+
+.comment-input:disabled {
+  background-color: #fafafa;
+  color: #999;
+}
+
+.comment-btn {
+  padding: 8px 16px;
+  background-color: #0095f6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.comment-btn:hover:not(:disabled) {
+  background-color: #0085e0;
+}
+
+.comment-btn:disabled {
+  background-color: #b3d9ff;
+  cursor: not-allowed;
+}

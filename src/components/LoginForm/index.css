@@ -1,0 +1,159 @@
+.login-container {
+  min-height: 100vh;
+  background-color: #f8fafc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  padding: 20px;
+}
+
+.login-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+  width: 100%;
+  max-width: 1100px;
+}
+
+/* Left Image Section */
+
+.login-image-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-landing-image {
+  width: 450px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* Right Form Section */
+
+.login-form-section {
+  width: 360px;
+  background-color: #ffffff;
+  padding: 48px 32px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 16px rgba(15, 23, 42, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Logo */
+
+.logo {
+  width: 82px;
+  margin-bottom: 20px;
+}
+
+/* Form */
+
+.login-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #262626;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.form-group input {
+  height: 40px;
+  background-color: #f1f5f9;
+  border: none;
+  border-radius: 4px;
+  padding: 0 12px;
+  font-size: 14px;
+  color: #475569;
+  outline: none;
+}
+
+/* Button */
+
+.login-button {
+  height: 40px;
+  background-color: #4094ef;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.login-button:hover {
+  background-color: #2f7de1;
+}
+
+.retry-btn {
+  margin-top: 10px;
+  height: 40px;
+  background-color: #f97316;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0 16px;
+}
+
+.retry-btn:hover {
+  background-color: #d66d14;
+}
+
+/* Error Message */
+
+.error-message {
+  color: #ef4444;
+  font-size: 13px;
+  margin-bottom: 12px;
+  margin-top: -4px;
+}
+
+.login-hint {
+  color: #475569;
+  font-size: 13px;
+  margin-top: 12px;
+  line-height: 1.4;
+}
+
+.login-hint strong {
+  color: #111827;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 768px) {
+  .login-card {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .login-landing-image {
+    width: 280px;
+  }
+
+  .login-form-section {
+    width: 100%;
+    max-width: 360px;
+    padding: 36px 24px;
+  }
+}

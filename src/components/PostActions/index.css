@@ -1,0 +1,31 @@
+/* PostActions Styles */
+.post-actions {
+  padding: 10px 16px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.action-btn {
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background: none;
+  padding: 5px;
+}
+
+.action-btn:hover {
+  color: #999;
+}
+
+.likes-count {
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+  margin: 0;
+}

@@ -1,0 +1,54 @@
+/* NotFound Styles */
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #fafafa;
+}
+
+.not-found-image {
+  width: 300px;
+  height: auto;
+  margin-bottom: 30px;
+}
+
+.not-found-container h1 {
+  font-size: 32px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.not-found-container p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.go-home-btn {
+  padding: 10px 20px;
+  background-color: #0095f6;
+  color: white;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.go-home-btn:hover {
+  background-color: #0085e0;
+}
+
+@media (max-width: 480px) {
+  .not-found-image {
+    width: 200px;
+  }
+
+  .not-found-container h1 {
+    font-size: 24px;
+  }
+}

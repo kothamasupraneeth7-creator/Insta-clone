@@ -1,0 +1,35 @@
+/* UserStories Styles */
+.user-stories-container {
+  background-color: white;
+  border-bottom: 1px solid #dbdbdb;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 8px;
+}
+
+.slick-slide {
+  padding: 0 5px;
+}
+
+.slick-prev,
+.slick-next {
+  width: 35px;
+  height: 35px;
+  z-index: 1;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-size: 35px;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .user-stories-container {
+    padding: 10px 15px;
+    margin: 20px 10px;
+  }
+}
