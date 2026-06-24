@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import Cookies from 'js-cookie'
+import { getApiUrl } from '../../utils/apiUrl'
 import Header from '../Header'
 import Profile from '../Profile'
 import './index.css'
@@ -18,7 +19,7 @@ const UserDetails = () => {
 
     try {
       const token = Cookies.get('jwt_token')
-      const response = await fetch(`/apis/insta-share/users/${id}`, {
+      const response = await fetch(getApiUrl(`/apis/insta-share/users/${id}`), {
         headers: {
           Authorization: `Bearer ${token}`,
         },

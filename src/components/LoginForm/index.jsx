@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Cookies from 'js-cookie'
+import { getApiUrl } from '../../utils/apiUrl'
 import './index.css'
 
 const DEMO_ENABLED = import.meta.env.VITE_ENABLE_DEMO === 'true'
@@ -34,7 +35,7 @@ const LoginForm = () => {
       const controller = new AbortController()
       const signal = controller.signal
 
-      const fetchPromise = fetch('/apis/login', {
+const fetchPromise = fetch(getApiUrl('/apis/login'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -49,7 +50,7 @@ const LoginForm = () => {
       } catch (err) {
         // first attempt failed (network/timeout) - try once more
         console.warn('First login attempt failed, retrying...', err)
-        const retryFetch = fetch('/apis/login', {
+        const retryFetch = fetch(getApiUrl('/apis/login'), {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

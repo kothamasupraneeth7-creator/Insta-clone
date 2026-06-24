@@ -5,6 +5,7 @@ import { FcLike } from 'react-icons/fc'
 import { FaRegComment } from 'react-icons/fa'
 import { BiShareAlt } from 'react-icons/bi'
 import Cookies from 'js-cookie'
+import { getApiUrl } from '../../utils/apiUrl'
 import CommentSection from '../CommentSection'
 
 const Post = ({ details, onLikeChange, onAddComment }) => {
@@ -56,7 +57,7 @@ const Post = ({ details, onLikeChange, onAddComment }) => {
 
     try {
       await fetch(
-        `/apis/insta-share/posts/${details.post_id}/like`,
+        getApiUrl(`/apis/insta-share/posts/${details.post_id}/like`),
         options,
       )
 

@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import Cookies from 'js-cookie'
+import { getApiUrl } from '../../utils/apiUrl'
 import Header from '../Header'
 import UserStories from '../UserStories'
 import PostsList from '../postsList'
@@ -23,7 +24,7 @@ const Home = () => {
 
     try {
       const token = Cookies.get('jwt_token')
-      const response = await fetch('/apis/insta-share/stories', {
+      const response = await fetch(getApiUrl('/apis/insta-share/stories'), {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -49,7 +50,7 @@ const Home = () => {
 
     try {
       const token = Cookies.get('jwt_token')
-      const response = await fetch('/apis/insta-share/posts', {
+      const response = await fetch(getApiUrl('/apis/insta-share/posts'), {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -84,7 +85,7 @@ const Home = () => {
     try {
       const token = Cookies.get('jwt_token')
       const response = await fetch(
-        `/apis/insta-share/posts?search=${encodeURIComponent(searchInput)}`,
+        getApiUrl(`/apis/insta-share/posts?search=${encodeURIComponent(searchInput)}`),
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -137,7 +138,7 @@ const Home = () => {
     
     try {
       const response = await fetch(
-        `/apis/insta-share/posts/${postId}/comments`,
+        getApiUrl(`/apis/insta-share/posts/${postId}/comments`),
         {
           method: 'POST',
           headers: {

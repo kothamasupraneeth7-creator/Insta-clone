@@ -2,6 +2,7 @@ import { BsHeart, FcLike } from 'react-icons/bs'
 import { FaRegComment } from 'react-icons/fa'
 import { BiShareAlt } from 'react-icons/bi'
 import Cookies from 'js-cookie'
+import { getApiUrl } from '../../utils/apiUrl'
 import './index.css'
 
 const PostActions = ({ postId, isLiked, likesCount, onLikeChange }) => {
@@ -10,7 +11,7 @@ const PostActions = ({ postId, isLiked, likesCount, onLikeChange }) => {
     const newLikeStatus = !isLiked
 
     try {
-      const response = await fetch(`/apis/insta-share/posts/${postId}/like`, {
+      const response = await fetch(getApiUrl(`/apis/insta-share/posts/${postId}/like`), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
