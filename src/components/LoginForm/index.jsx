@@ -58,13 +58,36 @@ const LoginForm = () => {
         })
         response = await Promise.race([retryFetch, timeout(15000)])
       }
-      const data = await response.json()
+
+      const parseResponseBody = async (responseToParse) => {
+        const contentType = responseToParse.headers.get('content-type') || ''
+        const text = await responseToParse.text()
+        if (contentType.includes('application/json')) {
+          try {
+            return JSON.parse(text)
+          } catch {
+            return { _rawText: text }
+          }
+        }
+        try {
+          return JSON.parse(text)
+        } catch {
+          return { _rawText: text }
+        }
+      }
+
+      const data = await parseResponseBody(response)
 
       if (response.ok) {
-        Cookies.set('jwt_token', data.jwt_token, { expires: 30 })
-        navigate('/')
+        if (data && data.jwt_token) {
+          Cookies.set('jwt_token', data.jwt_token, { expires: 30 })
+          navigate('/')
+        } else {
+          const message = data && (data.error_msg || data.error || data.message || data._rawText)
+          setErrorMsg(message || 'Login succeeded but the response was missing expected data.')
+        }
       } else {
-        const serverMsg = data && (data.error_msg || data.error || data.message)
+        const serverMsg = data && (data.error_msg || data.error || data.message || data._rawText)
         setErrorMsg(serverMsg || `Login failed (status ${response.status})`)
       }
     } catch (error) {
